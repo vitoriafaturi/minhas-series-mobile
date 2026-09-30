@@ -5,9 +5,9 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: '#262626' },
-        headerTintColor: '#fafafa',
-        contentStyle: { backgroundColor: '#262626' },
+        headerStyle: { backgroundColor: '#202330' },
+        headerTintColor: '#ffffff',
+        contentStyle: { backgroundColor: '#2d2f42' },
       }}
     >
       <Stack.Screen name="index" options={{ title: 'Minhas Séries' }} />

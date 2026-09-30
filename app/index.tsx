@@ -27,7 +27,7 @@ export default function Index() {
   );
 
   return (
-    <View className="flex-1 bg-neutral-800 px-4 pt-4">
+    <View className="flex-1 bg-fundo px-4 pt-4">
       <View className="mb-4 flex-row gap-2">
         {FILTROS.map((f) => {
           const ativo = f.valor === filtro;
@@ -36,10 +36,10 @@ export default function Index() {
               key={f.valor}
               onPress={() => setFiltro(f.valor)}
               className={`flex-1 items-center rounded-full border py-2 ${
-                ativo ? 'border-pink-200 bg-pink-200' : 'border-neutral-500 bg-neutral-700'
+                ativo ? 'border-rosa bg-rosa' : 'border-borda bg-campo'
               }`}
             >
-              <Text className={`font-semibold ${ativo ? 'text-neutral-900' : 'text-neutral-300'}`}>
+              <Text className={`font-semibold ${ativo ? 'text-white' : 'text-neutral-300'}`}>
                 {f.rotulo}
               </Text>
             </Pressable>
@@ -62,9 +62,9 @@ export default function Index() {
 
       <Pressable
         onPress={() => router.push('/form')}
-        className="absolute bottom-6 left-4 right-4 items-center rounded-xl bg-pink-200 py-4 active:bg-pink-300"
+        className="absolute bottom-6 left-4 right-4 items-center rounded-xl bg-rosa py-4 active:bg-rosa-escuro"
       >
-        <Text className="text-base font-bold text-neutral-900">+ Nova série</Text>
+        <Text className="text-base font-bold text-white">+ Nova série</Text>
       </Pressable>
     </View>
   );
@@ -77,18 +77,18 @@ function SerieCard({ serie }: { serie: Serie }) {
     <Pressable
       onPress={() => router.push(`/detalhe?id=${serie.id}`)}
       className={`rounded-xl border p-4 ${
-        concluida ? 'border-pink-300/60 bg-pink-950/50' : 'border-neutral-600 bg-neutral-700'
+        concluida ? 'border-rosa/60 bg-concluida' : 'border-borda bg-campo'
       }`}
     >
       <View className="flex-row items-center justify-between">
         <Text
-          className={`flex-1 text-lg font-bold ${concluida ? 'text-pink-200' : 'text-neutral-50'}`}
+          className={`flex-1 text-lg font-bold ${concluida ? 'text-rosa' : 'text-neutral-50'}`}
           numberOfLines={1}
         >
           {serie.titulo}
         </Text>
         {concluida && (
-          <Text className="ml-2 rounded-full bg-pink-200 px-2 py-0.5 text-xs font-bold text-neutral-900">
+          <Text className="ml-2 rounded-full bg-rosa px-2 py-0.5 text-xs font-bold text-white">
             ✓ Concluída
           </Text>
         )}

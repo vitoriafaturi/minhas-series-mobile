@@ -74,7 +74,7 @@ export default function Form() {
 
   return (
     <KeyboardAvoidingView
-      className="flex-1 bg-neutral-800"
+      className="flex-1 bg-fundo"
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <Stack.Screen options={{ title: editando ? 'Editar série' : 'Nova série' }} />
@@ -85,8 +85,8 @@ export default function Form() {
             value={titulo}
             onChangeText={setTitulo}
             placeholder="Ex.: Dark"
-            placeholderTextColor="#737373"
-            className="rounded-xl border border-neutral-600 bg-neutral-700 px-4 py-3 text-base text-neutral-50"
+            placeholderTextColor="#6c6e77"
+            className="rounded-xl border border-borda bg-campo px-4 py-3 text-base text-neutral-50"
           />
         </Campo>
 
@@ -95,8 +95,8 @@ export default function Form() {
             value={plataforma}
             onChangeText={setPlataforma}
             placeholder="Ex.: Netflix, Max, Prime Video"
-            placeholderTextColor="#737373"
-            className="rounded-xl border border-neutral-600 bg-neutral-700 px-4 py-3 text-base text-neutral-50"
+            placeholderTextColor="#6c6e77"
+            className="rounded-xl border border-borda bg-campo px-4 py-3 text-base text-neutral-50"
           />
         </Campo>
 
@@ -105,9 +105,9 @@ export default function Form() {
             value={temporadas}
             onChangeText={setTemporadas}
             placeholder="0"
-            placeholderTextColor="#737373"
+            placeholderTextColor="#6c6e77"
             keyboardType="numeric"
-            className="rounded-xl border border-neutral-600 bg-neutral-700 px-4 py-3 text-base text-neutral-50"
+            className="rounded-xl border border-borda bg-campo px-4 py-3 text-base text-neutral-50"
           />
         </Campo>
 
@@ -126,10 +126,10 @@ export default function Form() {
           onPress={salvar}
           disabled={salvando}
           className={`mt-2 items-center rounded-xl py-4 ${
-            salvando ? 'bg-pink-200/50' : 'bg-pink-200 active:bg-pink-300'
+            salvando ? 'bg-rosa/50' : 'bg-rosa active:bg-rosa-escuro'
           }`}
         >
-          <Text className="text-base font-bold text-neutral-900">
+          <Text className="text-base font-bold text-white">
             {salvando ? 'Salvando...' : editando ? 'Salvar alterações' : 'Cadastrar série'}
           </Text>
         </Pressable>
@@ -158,10 +158,10 @@ function SeletorNota({ nota, onChange }: { nota: number | null; onChange: (nota:
             // Tocar na nota já selecionada remove a nota
             onPress={() => onChange(nota === valor ? null : valor)}
             className={`flex-1 items-center rounded-xl border py-2 ${
-              acesa ? 'border-pink-200 bg-pink-200' : 'border-neutral-600 bg-neutral-700'
+              acesa ? 'border-rosa-escuro bg-rosa-escuro' : 'border-borda bg-campo'
             }`}
           >
-            <Text className={`text-lg font-bold ${acesa ? 'text-neutral-900' : 'text-neutral-400'}`}>
+            <Text className={`text-lg font-bold ${acesa ? 'text-white' : 'text-neutral-400'}`}>
               ★ {valor}
             </Text>
           </Pressable>
